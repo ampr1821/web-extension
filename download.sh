@@ -7,8 +7,8 @@ wget https://raw.githubusercontent.com/mitchellkrogza/Phishing.Database/master/A
 tar -xvzf $archive
 
 if [[ -f "$textfile" ]]; then
-    rm $textfile
+    rm $textfile -v
 fi
 
-mv ALL-phishing-domains.txt $textfile
-rm $archive
+mv ALL-phishing-domains.txt $textfile -v
+rm $archive -v
