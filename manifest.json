@@ -6,6 +6,15 @@
   "background": {
     "service_worker": "background.js"
   },
+  "content_scripts": 
+    [
+        {
+            "matches":["https://*/*","http://*/*"],
+            "js":["button.js"],
+            "css": ["button.css"],
+            "run_at": "document_end"
+        }
+    ],
   "permissions": ["storage","tabs"],
   "action": {
     "default_popup": "popup.html",
