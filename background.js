@@ -3,15 +3,7 @@
 // const Url = 'https://unamused-shrew-2596.dataplicity.io/';
 url = "fakeurl"
 
-function update(url_) {
-  url = url_;
-}
-
-chrome.tabs.onUpdated.addListener(()=>{
-  chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-    update(tabs[0].url);
-    alert('hi');
-  });
+function query(url, tabId) {
   fetch('http://localhost:9000/query',
   {
     method : 'POST',
@@ -19,6 +11,15 @@ chrome.tabs.onUpdated.addListener(()=>{
     headers : {'Content-Type' : 'application/json'},
     body : JSON.stringify({"domain" : url})
   }).then(function(response) {
-    console.log(response);
-  })
+    // response
+    // chrome.tabs.update(tabId, {url:"popup.html"});
+    console.log('yus');
+  });
+}
+
+chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
+  let queryOptions = { active: true, currentWindow: true };
+  let [tabx] = await chrome.tabs.query(queryOptions);
+  if (changeInfo.url)
+    query(tabx.url, tabId);
 });
