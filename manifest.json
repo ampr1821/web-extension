@@ -6,7 +6,18 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["storage","tabs", "scripting"],
+  
+  "content_scripts": 
+    [
+        {
+            "matches":["https://*/*","http://*/*"],
+            "js":["button.js"],
+            "css": ["button.css"],
+            "run_at": "document_end"
+        }
+    ],
+  "permissions": ["storage", "tabs" "scripting"],
+
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
