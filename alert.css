@@ -1,0 +1,20 @@
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
+
+.warning-msg{
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+}
+.warning-msg {
+  color: #9F6000;
+  background-color: #FEEFB3;
+}
+
+html {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  margin: 25px;
+}
+body {
+  width: 640px;
+}

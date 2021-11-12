@@ -32,11 +32,16 @@ function query(url, tabId) {
       cache : 'no-cache',
       headers : {'Content-Type' : 'application/json'},
       body : JSON.stringify({"domain" : hostname})
-    }).then(function(response) {
+    }).then(response => response.json())
+      .then((response) => {
+        if(!response.safe) {
+          chrome.tabs.update(tabId, {url:"alert.html"});
+        }
+      })
+      .catch(err => console.log(err));
       // response
       // chrome.tabs.update(tabId, {url:"popup.html"});
       // alert('yus');
-    });
   }
   oldhost = hostname;
 }
