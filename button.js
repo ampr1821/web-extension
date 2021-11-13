@@ -12,7 +12,7 @@ $("#button").mouseup (function() {
 window.onload=function(){
   var reportButton = document.getElementById('button');
   reportButton.addEventListener('click', function (event) {
-    fetch('http://localhost:9000/report',
+    fetch('https://unamused-shrew-2596.dataplicity.io/report',
     {
       method : 'POST',
       cache : 'no-cache',

@@ -26,7 +26,7 @@ function extractHostname(url) {
 function query(url, tabId) {
   hostname = extractHostname(url);
   if(hostname != oldhost) {
-    fetch('http://localhost:9000/query',
+    fetch('https://unamused-shrew-2596.dataplicity.io/query',
     {
       method : 'POST',
       cache : 'no-cache',
