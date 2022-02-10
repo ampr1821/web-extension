@@ -11,7 +11,7 @@
     [
         {
             "matches":["<all_urls>"],
-            "js":["jquery-3.6.0.js", "button.js"],
+            "js":["button.js"],
             "css": ["button.css"],
             "run_at": "document_end"
         }
