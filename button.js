@@ -1,17 +1,20 @@
-$("#button").mousedown(function() {
-  $("#top").addClass("top-click");
-  $("#body").addClass("body-click");
-  $("body").addClass("pulse-bg");
+var btn = document.getElementById('button');
+
+btn.addEventListener("mousedown", function() {
+  document.getElementById("top").classList.add("top-click");
+  document.getElementById("body").classList.add("body-click");
+  document.body.classList.add("pulse-bg");
 });
 
-$("#button").mouseup (function() {
-  $("#top").removeClass("top-click");
-  $("#body").removeClass("body-click");
-  $("body").removeClass("pulse-bg");
+btn.addEventListener("mouseup", function() {
+  document.getElementById("top").classList.remove("top-click");
+  document.getElementById("body").classList.remove("body-click");
+  document.body.classList.remove("pulse-bg");
 });
+
 window.onload=function(){
-  var reportButton = document.getElementById('button');
-  reportButton.addEventListener('click', function (event) {
+  // var reportButton = document.getElementById('button');
+  btn.addEventListener('click', function (event) {
     fetch('https://unamused-shrew-2596.dataplicity.io/report',
     {
       method : 'POST',
